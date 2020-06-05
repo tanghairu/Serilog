@@ -1,0 +1,32 @@
+简介：Serilog 是.net 下的新兴的日志框架
+用法:
+1. 首先安装Nuget包：
+   Install-Package Serilog
+   Install-Package Serilog.Sinks.Console
+2. 简单实例：
+    var log = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+    log.Information("Hello, Serilog!");
+    log.Warning("Goodbye, Serilog.");
+    Console.Read();
+3. ILogger
+   ILogger对象用于记录日志，和其他日志框架差不多。Serilog日志级别分为如下5级
+
+   Verbose,
+   Debug,
+   Information,
+   Warning,
+   Error,
+   Fatal,
+   ILogger对象还有一个Dispose方法，用于关闭日志对象。
+ 4. 接收器
+   Serilog的输出对象称之为Sink（水槽），github上提供了大量的第三方的可用 sinks ，这里简单的列举几个常用的：
+
+   Console         输出到控制台
+   Debug         输出到VS的Debug窗口
+   File             输出到文件
+   Rolling File     
+   MongoDB     输出到MongoDB
+   LiteDB         输出到文件数据库LiteDB
+   SQLite          输出到文件数据库SQLite
+   SignalR         输出为SignalR服务
+   HTTP         输出到REST服务
