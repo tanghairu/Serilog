@@ -8,6 +8,13 @@
     log.Information("Hello, Serilog!");
     log.Warning("Goodbye, Serilog.");
     Console.Read();
+    LoggerConfiguration 类提供一个流式接口用于构建一个日志记录管道
+    WriteTo.Console（) 将控制台接收器添加到上述管道中
+    CreateLogger（） 组装并返回一个实现ILogger接口的Logger对象
+    上述Logger对象同样实现了IDisposable，所以我们可以在using中调用它
+    最后log.Information（）和log.Warning（） 触发记录日志
+
+
 3. ILogger
    ILogger对象用于记录日志，和其他日志框架差不多。Serilog日志级别分为如下5级
 
